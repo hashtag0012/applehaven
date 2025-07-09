@@ -10,7 +10,7 @@ import { ContactSection } from "../components/contact-section"
 import { BookingModal } from "../components/booking-modal"
 import ModelViewer from "@/components/model-viewer"
 import { Instagram, Facebook } from "lucide-react"
-import { LoadingScreen } from "@/components/loading-screen"
+import { LoadingScreen } from "../components/loading-screen"
 import { ChinarLeaves } from "@/components/chinar-leaves"
 import Image from "next/image"
 
