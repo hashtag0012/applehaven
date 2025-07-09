@@ -11,6 +11,8 @@ import { BookingModal } from "./booking-modal"
 export function RoomsSection() {
   const [bookingOpen, setBookingOpen] = useState(false)
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null)
+  // Only one carousel index for the best room
+  const [bestRoomImageIndex, setBestRoomImageIndex] = useState(0)
 
   const rooms = [
     {
@@ -128,9 +130,7 @@ export function RoomsSection() {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {rooms.map((room, index) => {
-            // For the best room, handle image carousel state
             const isBestRoom = !!room.images;
-            const [bestRoomImageIndex, setBestRoomImageIndex] = useState(0);
             const handleNextImage = () => {
               if (!room.images) return;
               setBestRoomImageIndex((prev) => (prev + 1) % room.images.length);
@@ -214,43 +214,6 @@ export function RoomsSection() {
               </div>
             )
           })}
-                <div className="relative w-full h-48 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-md border border-white/20">
-                  {room.comingSoon ? (
-                    <div className="text-center p-6">
-                      <div className="text-4xl mb-3">📷</div>
-                      <h3 className="text-xl font-bold text-gray-700 mb-2">Images Coming Soon</h3>
-                      <p className="text-gray-600 text-sm">Professional photos of this beautiful room are being prepared</p>
-                    </div>
-                  ) : (
-                    <img
-                      src={room.image}
-                      alt={room.name}
-                      className="w-full h-48 object-cover rounded-2xl shadow-md border border-white/20 transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl fade-in-section"
-                      style={{ display: 'block' }}
-                      loading="lazy"
-                    />
-                  )}
-                </div>
-              <Wifi className="h-10 w-10 mx-auto mb-3 text-yellow-300" />
-              <p className="font-semibold text-lg text-white">High-Speed Wi-Fi</p>
-              <p className="text-sm text-gray-200">Stay connected with our complimentary Wi-Fi</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <Mountain className="h-10 w-10 mx-auto mb-3 text-green-300" />
-              <p className="font-semibold text-lg text-white">Scenic Views</p>
-              <p className="text-sm text-gray-200">Breathtaking views of the mountains and valleys</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <Wind className="h-10 w-10 mx-auto mb-3 text-blue-200" />
-              <p className="font-semibold text-lg text-white">Climate Control</p>
-              <p className="text-sm text-gray-200">Individually controlled heating and cooling</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <Tv className="h-10 w-10 mx-auto mb-3 text-pink-200" />
-              <p className="font-semibold text-lg text-white">Flat Screen TV</p>
-              <p className="text-sm text-gray-200">Enjoy a wide range of channels</p>
-            </div>
-          </div>
         </div>
       </div>
 
