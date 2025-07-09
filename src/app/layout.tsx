@@ -28,6 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+      </head>
       <body className={`${playfairDisplay.variable} ${lato.variable} font-sans bg-white`}>
         <ThemeProvider
           attribute="class"
