@@ -280,7 +280,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
           const time = Date.now() * 0.001;
           model.position.y = Math.sin(time * 1.8) * 1.2; // Even more bounce
           model.rotation.y = time * 0.5; // Faster rotation
-          model.scale.setScalar(1 + Math.sin(time * 2.5) * 0.08); // More scale bounce
+          model.scale.setScalar(5 * (1 + Math.sin(time * 2.5) * 0.08)); // Keep model large with bounce
         }
         
         if (scene && camera && renderer) {
