@@ -25,13 +25,8 @@ export function LoadingScreen({ onFinish }: { onFinish?: () => void }) {
       setSlideOut(true)
       setTimeout(() => {
         onFinish?.()
-<<<<<<< HEAD
-      }, 600)
-    }, 4500) // Increased to 4.5 seconds for 3D model loading
-=======
       }, 500)
     }, 7000) // Increased from 4000 to 7000
->>>>>>> 5b46a47 (Update chinar-leaves.tsx and other components)
 
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current)

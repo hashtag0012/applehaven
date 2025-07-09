@@ -116,12 +116,8 @@ export default function AppleHavenInn() {
                 modelUrls={["/models/countryside/kashmiri_apple_very_r_0629101439_texture.glb"]}
                 onLoaded={handleModelLoaded}
                 className="border-0"
-<<<<<<< HEAD
-                loadingDuration={4000} // Increased to sync with longer loading screen
-=======
                 loadingDuration={0} // No artificial delay, load as soon as ready
                 showLoadingOverlay={!isLoading}
->>>>>>> 5b46a47 (Update chinar-leaves.tsx and other components)
               />
             </Suspense>
           </div>

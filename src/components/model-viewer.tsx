@@ -36,14 +36,9 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
   onLoaded, 
   loadingDuration = 1000,
   fallbackImage = "/images/fallback.jpg",
-<<<<<<< HEAD
-  backgroundImage = "/images/unnamed (1).jpg" // Make sure this path is correct
-}) => { 
-=======
   backgroundImage = "/images/unnamed (1).jpg",
   showLoadingOverlay = true
-}) => {
->>>>>>> 5b46a47 (Update chinar-leaves.tsx and other components)
+}) => { 
   const mountRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
